@@ -13,8 +13,5 @@ outputs:
   logs: # id of output
     description: 'The compiler logs'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.config }}
-    - ${{ inputs.output }}
+  using: 'node16'
+  main: 'index.js'
