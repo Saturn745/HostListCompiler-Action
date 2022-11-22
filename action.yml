@@ -1,0 +1,17 @@
+name: 'Adguard Host list compiler'
+description: 'A simple tool that compiles hosts blocklists from multiple sources '
+inputs:
+  config:
+    description: 'Path to the compiler configuration file'
+    required: true
+    default: 'compiler.json'
+  output:
+    description: 'Path to the output file'
+    required: true
+    default: 'hosts'
+outputs:
+  logs: # id of output
+    description: 'The compiler logs'
+runs:
+  using: 'node16'
+  main: 'index.js'
