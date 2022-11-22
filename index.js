@@ -1,4 +1,5 @@
 const compile = require("@adguard/hostlist-compiler");
+const core = require('@actions/core');
 const fs = require('fs');
 
 ;(async () => {
