@@ -1,8 +1,6 @@
 FROM node:alpine
 
-WORKDIR /app
-
-COPY . .
+WORKDIR /github/workspace
 
 RUN npm i @adguard/hostlist-compiler
 
