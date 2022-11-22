@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY ./entrypoint.sh /app/entrypoint.sh
+COPY . .
 
 RUN npm i @adguard/hostlist-compiler
 
