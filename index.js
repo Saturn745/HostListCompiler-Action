@@ -1,19 +1,12 @@
 const compile = require("@adguard/hostlist-compiler");
+const fs = require('fs');
 
 ;(async () => {
     // Compile filters
-    const result = await compile({
-        name: 'Your Hostlist',
-        sources: [
-            {
-                type: 'adblock',
-                source: 'https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt', // or local file
-                transformations: ['RemoveComments', 'Validate'],
-            },
-        ],
-        transformations: ['Deduplicate'],
-    });
+    var obj = JSON.parse(fs.readFileSync(core.getInput("input"), 'utf8'));
+
+    const result = await compile(obj);
     
     // Write to file
-    writeFileSync('hosts.txt', result.join('\n'));
+    fs.writeFileSync(core.getInput("output"), result.join('\n'));
 })();
