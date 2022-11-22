@@ -1,4 +1,4 @@
-name: 'Host list compiler'
+name: 'Adguard Host list compiler'
 description: 'A simple tool that compiles hosts blocklists from multiple sources '
 inputs:
   config:
